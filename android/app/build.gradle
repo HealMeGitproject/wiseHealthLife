@@ -33,7 +33,7 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
     ndkVersion '23.0.7599858'
 
     sourceSets{
@@ -43,7 +43,7 @@ android {
     defaultConfig {
         applicationId "com.healme.wisehealthylife"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 31
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
