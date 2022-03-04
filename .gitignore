@@ -16,6 +16,10 @@
 *.iws
 .idea/
 
+# firebase
+/android/app/google-services.json
+/android/app/proguard-rules.pro
+
 # Visual Studio Code related
 .classpath
 .project
