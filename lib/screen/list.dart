@@ -29,7 +29,7 @@ class _ResultScreenState extends State<ResultScreen> {
           if(!snapshot.hasData){ // 만약에 데이터가 없다면
             return Scaffold(
               body: Center(
-
+                child: const SizedBox()
               ),
             );
           }
@@ -39,7 +39,7 @@ class _ResultScreenState extends State<ResultScreen> {
           return ListView( // 데이터 나열
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-              List<dynamic> userlist = data["Users"] as List; // 방 인원 수 배열로 확인
+              List<dynamic> userlist = (data["Users"] ?? []) as List; // 방 인원 수 배열로 확인
               bool start = data['Start?']; // 게임 스타트 유무 확인
 
               return Container(
