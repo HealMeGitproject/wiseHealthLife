@@ -5,9 +5,9 @@ import 'package:flutter/rendering.dart';
 import 'package:wisehealthylife/screen/progress.dart';
 import 'package:transition/transition.dart';
 
-import 'Auth.dart';
-import 'chatting.dart';
-import 'lobi.dart';
+import '../../../Auth.dart';
+import '../../../chatting.dart';
+import '../../../lobi.dart';
 
 /// This
 

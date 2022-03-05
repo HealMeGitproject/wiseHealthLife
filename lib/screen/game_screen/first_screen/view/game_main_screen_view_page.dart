@@ -3,12 +3,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:wisehealthylife/provider/loading.dart';
 import 'package:wisehealthylife/screen/vote.dart';
 import 'package:transition/transition.dart';
+import 'package:wisehealthylife/screen/game_screen/first_screen/controller/game_main_screen_controller.dart';
 import 'package:uuid/uuid.dart';
-import 'chatting.dart';
-import 'lobi.dart';
+import '../../../chatting.dart';
+import '../../../lobi.dart';
 
 /// This
 /// is the stateless widget that the main application instantiates.
@@ -20,8 +22,8 @@ class StartPage extends StatefulWidget {
 }
 
 class _StartPageState extends State<StartPage> {
+  final GameMainScreenController getController = Get.put(GameMainScreenController());
   GlobalKey<AnimatedListState> _animListKey = GlobalKey<AnimatedListState>(); // 챗
-  TextEditingController _textEditingController = TextEditingController(); // 챗
   List<String> _chats = []; // 챗
   CollectionReference room =
   FirebaseFirestore.instance.collection('PrivateRoom'); // 컬렉션을 변수로 저장하여 편하게
@@ -68,12 +70,7 @@ class _StartPageState extends State<StartPage> {
                   width: 74.w,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.push(
-                        context,
-                        Transition(
-                            child: Lobby(),
-                            transitionEffect: TransitionEffect.LEFT_TO_RIGHT),
-                      );
+                      Get.to(Lobby());
                     },
                     child: Text( // 방에서 나가는...
                       '나가기',
@@ -174,12 +171,7 @@ class _StartPageState extends State<StartPage> {
                 OutlinedButton(
                     onPressed: () {
                       room.doc(id).update({'Start?': true}); // 누르면 시작을 true로 바꾸면서 시작했음을 알려주는 변수
-                      Navigator.push(
-                        context,
-                        Transition(
-                            child: VotePage(),
-                            transitionEffect: TransitionEffect.LEFT_TO_RIGHT),
-                      );
+                      Get.to(VotePage());
                     },
                     child: Text(
                       "GAME START",
@@ -210,7 +202,7 @@ class _StartPageState extends State<StartPage> {
                     children: [
                       Expanded(
                         child: TextField(
-                          controller: _textEditingController,
+                          controller: getController.textEditingController(),
                           decoration: InputDecoration(
                             hintText: "메세지 입력창",
                             hintStyle: TextStyle(
@@ -227,7 +219,7 @@ class _StartPageState extends State<StartPage> {
                       // ignore: deprecated_member_use
                       FloatingActionButton(
                         onPressed: () {
-                          _handleSubmitted(_textEditingController.text);
+                          _handleSubmitted(getController.textEditingController().text);
                         },
                         child: Icon(
                           Icons.send_rounded,
