@@ -13,8 +13,6 @@ class ResultScreen extends StatefulWidget {
 
 class _ResultScreenState extends State<ResultScreen> {
 
-
-
   final user = FirebaseAuth.instance.currentUser; // 문서 ID용
   final FirebaseAuth _auth = FirebaseAuth.instance; // 문서 ID용
   late String? username = user?.displayName; // 방장 불러오기
@@ -39,7 +37,7 @@ class _ResultScreenState extends State<ResultScreen> {
           return ListView( // 데이터 나열
             children: snapshot.data!.docs.map((DocumentSnapshot document) {
               Map<String, dynamic> data = document.data()! as Map<String, dynamic>;
-              List<dynamic> userlist = (data["Users"] ?? []) as List; // 방 인원 수 배열로 확인
+              List<dynamic> userlist = data["Users"] as List; // 방 인원 수 배열로 확인
               bool start = data['Start?']; // 게임 스타트 유무 확인
 
               return Container(
