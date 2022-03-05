@@ -1,11 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:wisehealthylife/screen/lobi.dart';
-import 'package:wisehealthylife/provider/loading.dart';
+import 'package:get/get.dart';
+import 'package:wisehealthylife/screen/lobi/view/lobi.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-//page package
-import 'package:wisehealthylife/screen/login/view/login_view_page.dart';
+import 'package:wisehealthylife/route.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -22,10 +21,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ScreenUtilInit(
       designSize: Size(375, 812),
-      builder: () => MaterialApp(
+      builder: () => GetMaterialApp(
+        builder: (context, child) {
+          ScreenUtil.setContext(context);
+          return MediaQuery(
+            data: MediaQuery.of(context).copyWith(textScaleFactor: 1.0),
+            child: child!,
+          );
+        },
         debugShowCheckedModeBanner: false, // 디버그 숨기기
         title: 'Heal_me_login',
         home: SignInHealMe(),
+        getPages: GetXRoutes.routes,
       ),
     );
   }
@@ -45,14 +52,15 @@ class _SignInHealMeState extends State<SignInHealMe> {
         stream: _auth.authStateChanges(),
         builder: (BuildContext context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) { // 데이터가 들어오는 중이라면?
-            return Loading(); // 로딩
+             Get.toNamed('/loading');  // 로딩
           } else {
             if (!snapshot.hasData) { // 데이터가 없으면?
-              return LoginViewPage(); // 로그인 위젯
+              Get.toNamed('/login');// 로그인 위젯
             } else {
-              return Lobby(); // 데이터가 있으면 로비 위젯으로(자동 로그인 기능)
+              Get.toNamed('/lobi'); // 데이터가 있으면 로비 위젯으로(자동 로그인 기능)
             }
           }
+          return SizedBox();  //그냥 return 채워줌
         });
   }
 }
