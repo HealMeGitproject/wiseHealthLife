@@ -12,11 +12,9 @@ late final User? user;
 late final User? _user;
 
 Future<String> signInWithGoogle() async {
-  final GoogleSignInAccount? googleUser =
-  await GoogleSignIn().signIn(); // 로그인 페이지 Go
+  final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn(); // 로그인 페이지 Go
 
-  final GoogleSignInAuthentication googleAuth =
-  await googleUser!.authentication;
+  final GoogleSignInAuthentication googleAuth = await googleUser!.authentication;
 
   final credential = GoogleAuthProvider.credential(
     // 유저 인증 정보가 담김
