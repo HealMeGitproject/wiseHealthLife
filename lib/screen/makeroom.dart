@@ -147,6 +147,7 @@ class _EntpageState extends State<Entpage> {
                                     });
                                     //updateDoc('RoomName', controller.text);
                                     print('방 이름이 설정되었습니다.');
+
                                   } else {
                                     showSnackBar(context);
                                   }
