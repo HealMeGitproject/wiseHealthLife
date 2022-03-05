@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:wisehealthylife/screen/first.dart';
 import 'package:wisehealthylife/screen/Setting.dart';
 import 'package:wisehealthylife/screen/list.dart';
-import 'makeroom.dart';
+import '../../makeroom.dart';
 
 class Lobby extends StatefulWidget {
   const Lobby({Key? key}) : super(key: key);

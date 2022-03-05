@@ -4,13 +4,13 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:wisehealthylife/provider/loading.dart';
+import 'package:wisehealthylife/common/provider/loading/view/loading.dart';
 import 'package:wisehealthylife/screen/vote.dart';
 import 'package:transition/transition.dart';
 import 'package:wisehealthylife/screen/game_screen/first_screen/controller/game_main_screen_controller.dart';
 import 'package:uuid/uuid.dart';
 import '../../../chatting.dart';
-import '../../../lobi.dart';
+import '../../../lobi/view/lobi.dart';
 
 /// This
 /// is the stateless widget that the main application instantiates.
@@ -46,7 +46,7 @@ class _StartPageState extends State<StartPage> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) { // 데이터가 로딩 중일때
-          return Loading();
+          return LoadingViewPage();
         }
 
         return Scaffold( // 본 메인 화면

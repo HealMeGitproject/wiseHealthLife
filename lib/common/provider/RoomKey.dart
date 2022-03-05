@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:wisehealthylife/common/provider/loading.dart';
+import 'package:wisehealthylife/common/provider/loading/view/loading.dart';
 
 String roomkey = "";
 
@@ -31,7 +31,7 @@ class _KeyScreenState extends State {
                 );
               }
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Loading();
+                return LoadingViewPage();
               }
               return ListView(
                 children: snapshot.data!.docs.map((DocumentSnapshot document) {

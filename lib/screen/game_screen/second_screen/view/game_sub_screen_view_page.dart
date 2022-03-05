@@ -7,7 +7,7 @@ import 'package:transition/transition.dart';
 
 import '../../../Auth.dart';
 import '../../../chatting.dart';
-import '../../../lobi.dart';
+import '../../../lobi/view/lobi.dart';
 
 /// This
 

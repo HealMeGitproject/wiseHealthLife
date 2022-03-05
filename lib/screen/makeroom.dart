@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wisehealthylife/common/provider/RoomKey.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'lobi.dart';
+import 'lobi/view/lobi.dart';
 
 
 class Entpage extends StatefulWidget {
