@@ -6,9 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:wisehealthylife/common/provider/loading/view/loading.dart';
 import 'package:wisehealthylife/screen/vote.dart';
-import 'package:transition/transition.dart';
 import 'package:wisehealthylife/screen/game_screen/first_screen/controller/game_main_screen_controller.dart';
-import 'package:uuid/uuid.dart';
 import '../../../chatting.dart';
 import '../../../lobi/view/lobi.dart';
 
