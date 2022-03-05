@@ -2,6 +2,7 @@
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wisehealthylife/provider/loading.dart';
 import 'package:wisehealthylife/screen/vote.dart';
 import 'package:transition/transition.dart';
@@ -64,7 +65,7 @@ class _StartPageState extends State<StartPage> {
               Padding(
                 padding: EdgeInsets.only(top: 12.0, bottom: 12, right: 8.0),
                 child: Container(
-                  width: 74,
+                  width: 74.w,
                   child: ElevatedButton(
                     onPressed: () {
                       Navigator.push(
@@ -90,10 +91,10 @@ class _StartPageState extends State<StartPage> {
             ],
           ),
           drawer: Container(
-            width: 200,
+            width: 200.w,
             child: Drawer(
               child: Container(
-                  padding: EdgeInsets.only(top: 50),
+                  padding: EdgeInsets.only(top: 50.h),
                   color: const Color(0xffDCF7F9),
                   child: ListView(
                     children: <Widget>[
@@ -112,13 +113,13 @@ class _StartPageState extends State<StartPage> {
                           ),
                           Center(
                             child: Container(
-                              width: 150,
-                              height: 2,
+                              width: 150.w,
+                              height: 2.h,
                               color: const Color(0xff55CED6),
                             ),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           Center(
                             child: OutlinedButton(
@@ -138,7 +139,7 @@ class _StartPageState extends State<StartPage> {
                             ),
                           ),
                           SizedBox(
-                            height: 10,
+                            height: 10.h,
                           ),
                           Center(
                               child: Text(
@@ -168,7 +169,7 @@ class _StartPageState extends State<StartPage> {
             child: Column(
               children: <Widget>[
                 SizedBox(
-                  height: 5,
+                  height: 5.h,
                 ),
                 OutlinedButton(
                     onPressed: () {
@@ -191,7 +192,7 @@ class _StartPageState extends State<StartPage> {
                       primary: Colors.white,
                       minimumSize: Size(100, 35),
                       side: BorderSide(
-                        width: 5.0,
+                        width: 5.w,
                         color: const Color(0xffFF5C7A),
                         style: BorderStyle.solid,
                       ),
@@ -221,7 +222,7 @@ class _StartPageState extends State<StartPage> {
                         ),
                       ),
                       SizedBox(
-                        width: 10.0,
+                        width: 10.w,
                       ),
                       // ignore: deprecated_member_use
                       FloatingActionButton(
