@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:wisehealthylife/provider/loading.dart';
+import 'package:wisehealthylife/common/provider/loading.dart';
 import 'game_screen/first_screen/view/game_main_screen_view_page.dart';
 import 'game_screen/second_screen/view/game_sub_screen_view_page.dart';
 

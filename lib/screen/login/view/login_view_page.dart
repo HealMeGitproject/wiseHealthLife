@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 import 'package:sign_button/constants.dart';
 import 'package:sign_button/create_button.dart';
-import 'package:wisehealthylife/provider/auth.dart';
+import 'package:wisehealthylife/common/provider/auth.dart';
 import 'package:wisehealthylife/common/common.dart';
 
 class LoginViewPage extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:wisehealthylife/provider/auth.dart';
+import 'package:wisehealthylife/common/provider/auth.dart';
 
 class Setting extends StatefulWidget {
   @override

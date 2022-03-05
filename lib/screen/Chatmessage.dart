@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
-import 'package:wisehealthylife/provider/ChatModel.dart';
-import 'package:wisehealthylife/provider/Chatprovider.dart';
+import 'package:wisehealthylife/common/provider/ChatModel.dart';
+import 'package:wisehealthylife/common/provider/Chatprovider.dart';
 import 'package:provider/provider.dart';
 import 'package:flutter/cupertino.dart';
 

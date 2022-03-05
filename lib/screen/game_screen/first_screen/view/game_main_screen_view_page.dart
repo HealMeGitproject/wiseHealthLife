@@ -247,7 +247,7 @@ class _StartPageState extends State<StartPage> {
   }
 
   void _handleSubmitted(String text) {
-    _textEditingController.clear();
+    getController.textEditingController().clear();
     _chats.insert(0, text);
     _animListKey.currentState!.insertItem(0);
   }

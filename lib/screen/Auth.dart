@@ -2,10 +2,10 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:wisehealthylife/provider/warmupSpeedMachine.dart';
-import 'package:wisehealthylife/provider/Thankyou.dart';
-import 'package:wisehealthylife/provider/Timer.dart';
-import 'package:wisehealthylife/provider/pedometer.dart';
+import 'package:wisehealthylife/common/provider/warmupSpeedMachine.dart';
+import 'package:wisehealthylife/common/provider/Thankyou.dart';
+import 'package:wisehealthylife/common/provider/Timer.dart';
+import 'package:wisehealthylife/common/provider/pedometer.dart';
 import 'package:transition/transition.dart';
 
 import '../main.dart';
