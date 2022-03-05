@@ -91,6 +91,10 @@ flutter:
       fonts:
         - asset: fonts/Ubuntu-Regular.ttf
 
+    - family: Roboto
+      fonts:
+        - asset: fonts/Roboto-Regular.ttf
+
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages

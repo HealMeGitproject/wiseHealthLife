@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sign_button/constants.dart';
 import 'package:sign_button/create_button.dart';
 import 'package:wisehealthylife/provider/auth.dart';
+import 'package:wisehealthylife/common/common.dart';
 
 class LoginViewPage extends StatefulWidget {
   const LoginViewPage({Key? key}) : super(key: key);
@@ -50,7 +51,7 @@ class _LoginViewPageState extends State<LoginViewPage> {
                                   CircleAvatar(
                                     backgroundColor:
                                     Theme.of(context).primaryColor,
-                                    radius: 60,
+                                    radius: 60.r,
                                     child: Image.asset("images/Logo.png"), // 팀로고
                                   ),
                                 ],
@@ -79,25 +80,23 @@ class _LoginViewPageState extends State<LoginViewPage> {
                                     ),
                                   ),
                                   SizedBox(
-                                    height: 65,
+                                    height: 65.h,
                                   ),
                                   SignInButton(
                                       buttonType: ButtonType.google,
-                                      buttonSize: ButtonSize
-                                          .large, // small(default), medium, large
+                                      buttonSize: ButtonSize.large, // small(default), medium, large
                                       onPressed: () {
                                         signInWithGoogle();
                                       }),
-                                  SizedBox(height: 20),
+                                  SizedBox(height: 20.h),
                                   SignInButton(
                                       buttonType: ButtonType.facebook,
-                                      buttonSize: ButtonSize.large,
-                                      width: 261, // small(default), medium, large
+                                      buttonSize: ButtonSize.large, // small(default), medium, large
                                       onPressed: () {
                                         signInWithFacebook();
                                       }),
                                   SizedBox(
-                                    height: 50,
+                                    height: 50.h,
                                   ),
                                   Text( // 멘트
                                     "클릭 한 번으로",
@@ -108,15 +107,15 @@ class _LoginViewPageState extends State<LoginViewPage> {
                                       fontFamily: 'Jua',
                                     ),
                                   ),
-                                  Text( // 입니다
-                                    "슬기로운 건강생활을 즐겨보세요.",
+                                  Text( // 멘트
+                                    "슬기로운 건강생활을 즐겨보세요!",
                                     style: TextStyle(
                                       color: Colors.black,
                                       fontSize: 22,
                                       fontWeight: FontWeight.bold,
                                       fontFamily: 'Jua',
                                     ),
-                                  )
+                                  ),
                                 ],
                               ),
                             ),
