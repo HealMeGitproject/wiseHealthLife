@@ -2,9 +2,11 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:wisehealthylife/common/provider/loading/view/loading.dart';
 import 'package:wisehealthylife/screen/lobi/view/lobi.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:wisehealthylife/route.dart';
+import 'package:wisehealthylife/screen/login/view/login_view_page.dart';
 
 final FirebaseAuth _auth = FirebaseAuth.instance;
 
@@ -52,15 +54,14 @@ class _SignInHealMeState extends State<SignInHealMe> {
         stream: _auth.authStateChanges(),
         builder: (BuildContext context, snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) { // 데이터가 들어오는 중이라면?
-             Get.toNamed('/loading');  // 로딩
+             return LoadingViewPage();  // 로딩
           } else {
             if (!snapshot.hasData) { // 데이터가 없으면?
-              Get.toNamed('/login');// 로그인 위젯
+              return LoginViewPage();  // 로그인 위젯
             } else {
-              Get.toNamed('/lobi'); // 데이터가 있으면 로비 위젯으로(자동 로그인 기능)
+              return Lobby(); // 데이터가 있으면 로비 위젯으로(자동 로그인 기능)
             }
           }
-          return SizedBox();  //그냥 return 채워줌
         });
   }
 }
