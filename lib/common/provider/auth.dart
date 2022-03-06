@@ -33,7 +33,8 @@ Future<String> signInWithGoogle() async {
     'EnteredRoomCount': 0, //유저가 참여된 방의 개수
     'EnteredRoomList': [
       "",
-    ] // 유저가 참여한 방의 이름
+    ], // 유저가 참여한 방의 이름
+    'stateCommand': '',
   });
 
   final nickName = user!.displayName;
